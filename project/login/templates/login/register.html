@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block js_content %}{%endblock%}
+
+{% block css_content %}
+<style>
+    .container .row{
+        height: 80vh;
+    }
+    #exampleInputEmail1{
+        width: 360px
+    }
+    #exampleInputName{
+        width: 150px
+    }
+    #exampleInputPassword{
+        width: 150px
+    }
+</style>
+{%endblock%}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-4" >
+            <form action="/register/" method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                  <div id="emailHelp" class="form-text">我們不會分享你的「email」給任何人。</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">名稱</label>
+                    <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp" name="name">
+                    <div id="emailHelp" class="form-text">我們不會分享你的「名稱」給任何人。</div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">出生年月日</label>
+                    <input type="date" class="form-control" id="exampleInputBirth" name="birth">
+                    <div id="emailHelp" class="form-text">我們不會分享你的「出生年月日」給任何人。</div>
+                  </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">請輸入密碼</label>
+                    <input type="password" class="form-control" id="exampleInputPassword" name="password1">
+                    <div id="emailHelp" class="form-text">我們不會分享你的「密碼」給任何人。</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">請再次輸入密碼</label>
+                    <input type="password" class="form-control" id="exampleInputPassword" name="password2">
+                    <div id="emailHelp" class="form-text">請務必輸入同樣的密碼。</div>
+                  </div>
+                
+                <button type="submit" class="btn btn-primary">確定</button>
+              </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

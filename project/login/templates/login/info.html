@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block js_content %}{%endblock%}
+
+{% block css_content %}
+
+{%endblock%}
+
+{% block content %}
+<dl class="row">
+    <dt class="col-sm-3">我的信箱</dt>
+    <dd class="col-sm-9">{{ request.session.useremail }}</dd>
+  
+    <dt class="col-sm-3">我的名稱</dt>
+    <dd class="col-sm-9">{{ request.session.username }}</dd>
+
+    <dt class="col-sm-3 text-truncate">我的出生年月日</dt>
+    <dd class="col-sm-9">{{ request.session.userbirth }}</dd>
+
+    <dt class="col-sm-3">我的密碼</dt>
+    <dd class="col-sm-9">{{ request.session.userpwd }}</dd>
+  
+    <dt class="col-sm-3">自我介紹</dt>
+    <dd class="col-sm-9">
+      <dl class="row">
+        <dt class="col-sm-4"></dt>
+      </dl>
+    </dd>
+  </dl>
+{% endblock %}
